@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  example:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    networks:
+      - muscle-nw
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sample
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_DB: muscleApplication_db
+
+  db:
+    container_name: postgres
+    image: postgres:16.2-alpine3.19
+    networks:
+      - muscle-nw
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: muscleApplication_db
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+networks:
+  muscle-nw:
+    driver: bridge
