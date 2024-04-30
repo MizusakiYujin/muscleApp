@@ -1,4 +1,4 @@
-package com.example.muscleApplication.demo.presentation;
+package com.example.muscleapplication.demo.presentation;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
