@@ -1,0 +1,21 @@
+training_recode:
+  - id: 1
+    training_name: "ベンチプレス"
+    weight: "140.0"
+    rep: "10"
+    create_date: "2024-05-01"
+  - id: 2
+    training_name: "スカルクラッシャー"
+    weight: "40.0"
+    rep: "8"
+    create_date: "2024-05-01"
+  - id: 3
+    training_name: "スクワット"
+    weight: "200.0"
+    rep: "10"
+    create_date: "2024-05-01"
+  - id: 4
+    training_name: "スカルクラッシャー"
+    weight: "20.0"
+    rep: "10"
+    create_date: "2024-04-30"
