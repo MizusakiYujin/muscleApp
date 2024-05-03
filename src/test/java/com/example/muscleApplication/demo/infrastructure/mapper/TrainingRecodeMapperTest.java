@@ -59,4 +59,14 @@ class TrainingRecodeMapperTest {
                 );
         assertThat(actual).isEqualTo(expected);
     }
+
+    @Test
+    @DataSet("datasets/setup/training.yml")
+    void トレーニング名称が登録されていない検索の場合() {
+        // execute
+        List<TrainingRecodeEntity> actual = sut.findByTrainingName("シュラッグ");
+        // assert
+        List<TrainingRecodeEntity> expected = List.of();
+        assertThat(actual).isEqualTo(expected);
+    }
 }
