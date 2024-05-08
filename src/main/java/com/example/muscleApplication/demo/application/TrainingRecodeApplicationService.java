@@ -1,7 +1,7 @@
-package com.example.muscleapplication.demo.application;
+package com.example.muscleApplication.demo.application;
 
-import com.example.muscleapplication.demo.infrastructure.TrainingRecodeEntity;
-import com.example.muscleapplication.demo.infrastructure.repository.TrainingRecodeRepository;
+import com.example.muscleApplication.demo.infrastructure.TrainingRecodeEntity;
+import com.example.muscleApplication.demo.infrastructure.repository.TrainingRecodeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

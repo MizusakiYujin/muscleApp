@@ -1,4 +1,4 @@
-package com.example.muscleapplication.demo.infrastructure;
+package com.example.muscleApplication.demo.infrastructure;
 
 public record TrainingRecordEntity(
         Integer id,

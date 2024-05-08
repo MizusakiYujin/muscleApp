@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.domain.repository;
+package com.example.muscleApplication.demo.domain.repository;
 
-import com.example.muscleapplication.demo.infrastructure.TrainingRecordEntity;
+import com.example.muscleApplication.demo.infrastructure.TrainingRecordEntity;
 
 import java.util.List;
 

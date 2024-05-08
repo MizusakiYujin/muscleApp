@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.presentation;
+package com.example.muscleApplication.demo.presentation;
 
-import com.example.muscleapplication.demo.application.TrainingRecordService;
+import com.example.muscleApplication.demo.application.TrainingRecordService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

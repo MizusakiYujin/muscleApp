@@ -1,4 +1,4 @@
-package com.example.muscleapplication.demo;
+package com.example.muscleApplication.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

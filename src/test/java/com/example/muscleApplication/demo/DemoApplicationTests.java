@@ -1,4 +1,4 @@
-package com.example.muscleapplication.demo;
+package com.example.muscleApplication.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

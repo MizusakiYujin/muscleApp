@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.infrastructure.mapper;
+package com.example.muscleApplication.demo.infrastructure.mapper;
 
-import com.example.muscleapplication.demo.infrastructure.TrainingRecordEntity;
+import com.example.muscleApplication.demo.infrastructure.TrainingRecordEntity;
 import com.github.database.rider.core.api.configuration.DBUnit;
 import com.github.database.rider.core.api.connection.ConnectionHolder;
 import com.github.database.rider.core.api.dataset.DataSet;

@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.infrastructure.mapper;
+package com.example.muscleApplication.demo.infrastructure.mapper;
 
-import com.example.muscleapplication.demo.infrastructure.TrainingRecodeEntity;
+import com.example.muscleApplication.demo.infrastructure.TrainingRecodeEntity;
 import com.github.database.rider.core.api.configuration.DBUnit;
 import com.github.database.rider.core.api.connection.ConnectionHolder;
 import com.github.database.rider.core.api.dataset.DataSet;
@@ -14,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.sql.DriverManager;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest

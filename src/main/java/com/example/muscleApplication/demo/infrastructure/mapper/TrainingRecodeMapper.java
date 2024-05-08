@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.infrastructure.mapper;
+package com.example.muscleApplication.demo.infrastructure.mapper;
 
-import com.example.muscleapplication.demo.infrastructure.TrainingRecodeEntity;
+import com.example.muscleApplication.demo.infrastructure.TrainingRecodeEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

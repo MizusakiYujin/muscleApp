@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.domain;
+package com.example.muscleApplication.demo.domain;
 
-import com.example.muscleapplication.demo.domain.parts.*;
+import com.example.muscleApplication.demo.domain.parts.*;
 
 import java.util.Date;
 

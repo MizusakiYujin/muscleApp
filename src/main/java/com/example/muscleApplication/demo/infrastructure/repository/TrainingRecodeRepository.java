@@ -1,6 +1,6 @@
-package com.example.muscleapplication.demo.infrastructure.repository;
+package com.example.muscleApplication.demo.infrastructure.repository;
 
-import com.example.muscleapplication.demo.infrastructure.TrainingRecodeEntity;
+import com.example.muscleApplication.demo.infrastructure.TrainingRecodeEntity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.muscleapplication.demo.domain.parts;
+package com.example.muscleApplication.demo.domain.parts;
 
 public record Shoulder(
         String trainingName,

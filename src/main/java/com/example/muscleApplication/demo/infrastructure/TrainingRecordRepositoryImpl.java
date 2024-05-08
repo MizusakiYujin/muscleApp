@@ -1,7 +1,7 @@
-package com.example.muscleapplication.demo.infrastructure;
+package com.example.muscleApplication.demo.infrastructure;
 
-import com.example.muscleapplication.demo.domain.repository.TrainingRecordRepository;
-import com.example.muscleapplication.demo.infrastructure.mapper.TrainingRecordMapper;
+import com.example.muscleApplication.demo.domain.repository.TrainingRecordRepository;
+import com.example.muscleApplication.demo.infrastructure.mapper.TrainingRecordMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
