@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/trainingRecode")
+@RequestMapping("/api")
 public class DemoController {
     private final TrainingRecordService trainingRecodeApplication;
     public DemoController(TrainingRecordService trainingRecodeApplication) {
@@ -20,8 +20,8 @@ public class DemoController {
 //        return trainingRecodeApplication.findByTrainingName(trainingName);
 //    }
 //
-    @GetMapping("/aa")
+    @GetMapping("/test")
     public String getByTrainingName(){
-        return "aaa";
+        return "test";
     }
 }
