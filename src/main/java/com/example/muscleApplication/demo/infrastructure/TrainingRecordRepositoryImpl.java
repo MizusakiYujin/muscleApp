@@ -1,5 +1,6 @@
 package com.example.muscleApplication.demo.infrastructure;
 
+import com.example.muscleApplication.demo.domain.TrainingRecord;
 import com.example.muscleApplication.demo.domain.repository.TrainingRecordRepository;
 import com.example.muscleApplication.demo.infrastructure.mapper.TrainingRecordMapper;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,9 @@ public class TrainingRecordRepositoryImpl implements TrainingRecordRepository {
     }
 
     @Override
-    public List<TrainingRecordEntity> findByTrainingName(String trainingName) {
-        return trainingRecordMapper.findByTrainingName(trainingName);
+    public List<TrainingRecord> findByTrainingName(String trainingName) {
+        return trainingRecordMapper.findByTrainingName(trainingName)
+                .stream()
+                .map(TrainingRecordEntity::toModel).toList();
     }
 }

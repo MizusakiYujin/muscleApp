@@ -1,5 +1,6 @@
 package com.example.muscleApplication.demo.application;
 
+import com.example.muscleApplication.demo.domain.TrainingRecord;
 import com.example.muscleApplication.demo.domain.repository.TrainingRecordRepository;
 import com.example.muscleApplication.demo.infrastructure.TrainingRecordEntity;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class TrainingRecordService {
         this.trainingRecordRepository = trainingRecordRepository;
     }
 
-    public List<TrainingRecordEntity> findByTrainingName(String trainingName) {
+    public List<TrainingRecord> findByTrainingName(String trainingName) {
         return trainingRecordRepository.findByTrainingName(trainingName);
     }
 }
