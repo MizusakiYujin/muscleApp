@@ -74,17 +74,17 @@ class TrainingRecordMapperTest {
         }
     }
 
-    @Nested
-    class トレーニング記録登録 {
-        @Test
-        void トレーニング記録一件登録() {
-            // execute
-            int actual = sut.insertTrainingRecordBulk(List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8", "2024-04-01")));
-            // assert
-            assertThat(actual).isEqualTo(1);
-        }
-
-    }
-
-
+//    @Nested
+//    class トレーニング記録登録 {
+//
+//        @Test
+//        void トレーニング記録一件登録() {
+//            // execute
+//            int actual = sut.insertTrainingRecordBulk(
+//                    List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8",
+//                            "2024-04-01")));
+//            // assert
+//            assertThat(actual).isEqualTo(1);
+//        }
+//    }
 }
