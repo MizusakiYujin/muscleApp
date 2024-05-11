@@ -4,7 +4,7 @@ import static org.mockito.Mockito.when;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.example.muscleApplication.demo.domain.TrainingRecord;
-import com.example.muscleApplication.demo.domain.parts.Part;
+import com.example.muscleApplication.demo.domain.Part;
 import com.example.muscleApplication.demo.infrastructure.mapper.TrainingRecordMapper;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

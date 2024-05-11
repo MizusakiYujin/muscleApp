@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 
 import com.example.muscleApplication.demo.application.TrainingRecordService;
 import com.example.muscleApplication.demo.domain.TrainingRecord;
-import com.example.muscleApplication.demo.domain.parts.Part;
+import com.example.muscleApplication.demo.domain.Part;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

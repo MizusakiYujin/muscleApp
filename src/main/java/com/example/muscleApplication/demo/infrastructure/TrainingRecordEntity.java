@@ -1,7 +1,7 @@
 package com.example.muscleApplication.demo.infrastructure;
 
 import com.example.muscleApplication.demo.domain.TrainingRecord;
-import com.example.muscleApplication.demo.domain.parts.Part;
+import com.example.muscleApplication.demo.domain.Part;
 
 public record TrainingRecordEntity(
         Integer id,

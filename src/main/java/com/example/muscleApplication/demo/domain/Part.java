@@ -1,4 +1,4 @@
-package com.example.muscleApplication.demo.domain.parts;
+package com.example.muscleApplication.demo.domain;
 
 public record Part(
         String partName,
