@@ -4,6 +4,7 @@ import com.example.muscleApplication.demo.infrastructure.TrainingRecordEntity;
 import com.github.database.rider.core.api.configuration.DBUnit;
 import com.github.database.rider.core.api.connection.ConnectionHolder;
 import com.github.database.rider.core.api.dataset.DataSet;
+import com.github.database.rider.core.api.dataset.ExpectedDataSet;
 import com.github.database.rider.junit5.api.DBRider;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.DriverManager;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -74,17 +74,17 @@ class TrainingRecordMapperTest {
         }
     }
 
-//    @Nested
-//    class トレーニング記録登録 {
-//
-//        @Test
-//        void トレーニング記録一件登録() {
-//            // execute
-//            int actual = sut.insertTrainingRecordBulk(
-//                    List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8",
-//                            "2024-04-01")));
-//            // assert
-//            assertThat(actual).isEqualTo(1);
-//        }
-//    }
+    @Nested
+    class トレーニング記録登録 {
+
+        @Test
+        @DataSet("datasets/setup/before-insert-training.yml")
+        @ExpectedDataSet("datasets/expected/after-insert-training.yml")
+        void トレーニング記録一件登録() {
+            // execute
+            int actual = sut.insertTrainingRecord(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8", "2024-04-01"));
+            // assert
+            assertThat(actual).isEqualTo(1);
+        }
+    }
 }
