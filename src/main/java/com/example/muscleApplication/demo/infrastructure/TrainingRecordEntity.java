@@ -4,7 +4,6 @@ import com.example.muscleApplication.demo.domain.TrainingRecord;
 import com.example.muscleApplication.demo.domain.Part;
 
 public record TrainingRecordEntity(
-        Integer id,
         String partName,
         String trainingName,
         String weight,

@@ -1,0 +1,16 @@
+<mapper namespace="src/main/java/com/example/muscleApplication/demo/infrastructure/mapper/TrainingRecordMapper">
+    <insert id="insertTrainingRecordBulk" parameterType="java.util.List">
+        insert into training_recode
+        (part_name, training_name, weight, rep, create_date)
+        values
+        <foreach collection="trainingRecordList" item="trainingRecord" separator=",">
+            (
+            #{trainingRecord.part_name,jdbcType=VARCHAR},
+            #{trainingRecord.training_name,jdbcType=VARCHAR},
+            #{trainingRecord.weight,jdbcType=VARCHAR},
+            #{trainingRecord.rep,jdbcType=VARCHAR},
+            #{trainingRecord.create_date,jdbcType=DATE}
+            )
+        </foreach>
+    </insert>
+</mapper>

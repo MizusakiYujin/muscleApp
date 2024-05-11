@@ -1,0 +1,6 @@
+<configuration>
+    <mappers>
+<!--        <mapper resource="src/main/resources/mapper/TrainingRecordMapper.xml"/>-->
+        <mapper url="file:///Users/ims-sol/dev/muscleApp/src/main/resources/mapper/TrainingRecordMapper.xml"/>
+    </mappers>
+</configuration>

@@ -20,6 +20,7 @@ public class TrainingRecordRepositoryImpl implements TrainingRecordRepository {
     public List<TrainingRecord> findByTrainingName(String trainingName) {
         return trainingRecordMapper.findByTrainingName(trainingName)
                 .stream()
-                .map(TrainingRecordEntity::toModel).toList();
+                .map(TrainingRecordEntity::toModel)
+                .toList();
     }
 }

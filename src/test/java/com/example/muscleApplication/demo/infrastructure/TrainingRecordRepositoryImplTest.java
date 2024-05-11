@@ -31,8 +31,8 @@ class TrainingRecordRepositoryImplTest {
         when(mapper.findByTrainingName("ベンチプレス"))
                 .thenReturn(
                         List.of(
-                                new TrainingRecordEntity(1, "胸", "ベンチプレス", "140.0", "10", "2024-04-01"),
-                                new TrainingRecordEntity(2, "胸", "ベンチプレス", "150.0", "10", "2024-04-09")
+                                new TrainingRecordEntity( "胸", "ベンチプレス", "140.0", "10", "2024-04-01"),
+                                new TrainingRecordEntity( "胸", "ベンチプレス", "150.0", "10", "2024-04-09")
                         )
                 );
         // execute
