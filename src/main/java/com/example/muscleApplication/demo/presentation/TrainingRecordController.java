@@ -18,7 +18,7 @@ public class TrainingRecordController {
             @PathVariable("trainingName")
             String trainingName
     ) {
-        return TrainingRecordResponseList.of(trainingRecordService.findByTrainingName(trainingName));
+        return TrainingRecordResponseList.of(trainingRecordService.execute(trainingName));
     }
 
     @GetMapping("/test")
