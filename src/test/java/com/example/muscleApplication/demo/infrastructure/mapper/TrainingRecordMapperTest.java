@@ -22,11 +22,13 @@ import static org.assertj.core.api.Assertions.*;
 @DBUnit
 @DBRider
 class TrainingRecordMapperTest {
+
     private static final String DB_URL = "jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false";
     private static final String DB_USER = "user";
     private static final String DB_PASSWORD = "password";
 
-    private static final ConnectionHolder connectionHolder = () -> DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+    private static final ConnectionHolder connectionHolder = () -> DriverManager.getConnection(
+            DB_URL, DB_USER, DB_PASSWORD);
 
     @Autowired
     private TrainingRecordMapper sut;
@@ -38,6 +40,7 @@ class TrainingRecordMapperTest {
 
     @Nested
     class トレーニング名検索 {
+
         @Test
         @DataSet("datasets/setup/training.yml")
         void トレーニング名称がベンチプレスの検索が正しく行える場合() {
@@ -45,7 +48,8 @@ class TrainingRecordMapperTest {
             List<TrainingRecordEntity> actual = sut.findByTrainingName("ベンチプレス");
             // assert
             List<TrainingRecordEntity> expected =
-                    List.of(new TrainingRecordEntity( "胸","ベンチプレス", "140.0", "10", "2024-05-01"));
+                    List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "10",
+                            "2024-05-01"));
             assertThat(actual).isEqualTo(expected);
         }
 
@@ -57,8 +61,10 @@ class TrainingRecordMapperTest {
             // assert
             List<TrainingRecordEntity> expected =
                     List.of(
-                            new TrainingRecordEntity( "腕", "スカルクラッシャー", "40.0", "8", "2024-05-01"),
-                            new TrainingRecordEntity( "腕","スカルクラッシャー", "20.0", "10", "2024-04-30")
+                            new TrainingRecordEntity("腕", "スカルクラッシャー", "40.0", "8",
+                                    "2024-05-01"),
+                            new TrainingRecordEntity("腕", "スカルクラッシャー", "20.0", "10",
+                                    "2024-04-30")
                     );
             assertThat(actual).isEqualTo(expected);
         }
@@ -76,15 +82,13 @@ class TrainingRecordMapperTest {
 
     @Nested
     class トレーニング記録登録 {
+
         @Test
         void トレーニング記録一件登録() {
             // execute
-            int actual = sut.insertTrainingRecordBulk(List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8", "2024-04-01")));
+            int actual = sut.insertTrainingRecordBulk(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8", "2024-04-01"));
             // assert
             assertThat(actual).isEqualTo(1);
         }
-
     }
-
-
 }
