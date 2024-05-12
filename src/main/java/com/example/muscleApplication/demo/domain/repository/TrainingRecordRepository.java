@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TrainingRecordRepository {
     List<TrainingRecord> findByTrainingName(String trainingName);
+
+    Integer insertTrainingRecordList(List<TrainingRecord> trainingRecordList);
 }

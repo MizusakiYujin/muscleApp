@@ -23,4 +23,15 @@ public class TrainingRecordRepositoryImpl implements TrainingRecordRepository {
                 .map(TrainingRecordEntity::toModel)
                 .toList();
     }
+
+    @Override
+    public Integer insertTrainingRecordList(List<TrainingRecord> trainingRecordList) {
+        return trainingRecordList
+                .stream()
+                .map(TrainingRecord::toModel)
+                .map(trainingRecordMapper::insertTrainingRecord)
+                .reduce(0, Integer::sum);
+    }
+
+
 }
