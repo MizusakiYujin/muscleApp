@@ -15,4 +15,8 @@ public class TrainingRecordService {
     public List<TrainingRecord> execute(String trainingName) {
         return trainingRecordRepository.findByTrainingName(trainingName);
     }
+
+    public Integer execute(List<TrainingRecord> trainingRecordList) {
+        return trainingRecordRepository.insertTrainingRecordList(trainingRecordList);
+    }
 }

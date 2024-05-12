@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -24,14 +26,24 @@ public class TrainingRecordController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> postTrainingRecord(
-    ){
-
-        return new ResponseEntity<>(
-                null,
-                null,
-                HttpStatus.OK
-        );
+    public ResponseEntity<List<TrainingRecord>> postTrainingRecordList(
+            @RequestBody
+            List<TrainingRecord> trainingRecordList
+    ) {
+        Integer result = trainingRecordService.execute(trainingRecordList);
+        if (result.equals(trainingRecordList.size())) {
+            return new ResponseEntity<>(
+                    trainingRecordList,
+                    null,
+                    HttpStatus.OK
+            );
+        } else {
+            return new ResponseEntity<>(
+                    null,
+                    null,
+                    HttpStatus.CONFLICT
+            );
+        }
     }
 
     @GetMapping("/test")
