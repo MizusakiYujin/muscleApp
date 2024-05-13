@@ -46,8 +46,7 @@ class TrainingRecordMapperTest {
             List<TrainingRecordEntity> actual = sut.findByTrainingName("ベンチプレス");
             // assert
             List<TrainingRecordEntity> expected =
-                    List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "10",
-                            "2024-05-01"));
+                    List.of(new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "10", "2024-05-01"));
             assertThat(actual).isEqualTo(expected);
         }
 
@@ -59,10 +58,8 @@ class TrainingRecordMapperTest {
             // assert
             List<TrainingRecordEntity> expected =
                     List.of(
-                            new TrainingRecordEntity("腕", "スカルクラッシャー", "40.0", "8",
-                                    "2024-05-01"),
-                            new TrainingRecordEntity("腕", "スカルクラッシャー", "20.0", "10",
-                                    "2024-04-30")
+                            new TrainingRecordEntity("腕", "スカルクラッシャー", "40.0", "8", "2024-05-01"),
+                            new TrainingRecordEntity("腕", "スカルクラッシャー", "20.0", "10", "2024-04-30")
                     );
             assertThat(actual).isEqualTo(expected);
         }
