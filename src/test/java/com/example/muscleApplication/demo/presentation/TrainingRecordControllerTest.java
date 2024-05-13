@@ -10,6 +10,7 @@ import com.example.muscleApplication.demo.domain.Part;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -30,36 +31,52 @@ class TrainingRecordControllerTest {
         RestAssuredMockMvc.mockMvc(mockMvc);
     }
 
-    @Test
-    void トレーニング名検索が正しく行える() {
-        // setup
-        when(service.execute("ベンチプレス"))
-                .thenReturn(
-                        List.of(
-                                new TrainingRecord(
-                                        new Part("胸", "ベンチプレス", "140.0", "10"),
-                                        "2024-04-01"
-                                ),
-                                new TrainingRecord(
-                                        new Part("胸", "ベンチプレス", "150.0", "10"),
-                                        "2024-04-09"
-                                )
-                        )
-                );
+    @Nested
+    class トレーニング名検索 {
+        @Test
+        void トレーニング名検索が正しく行える() {
+            // setup
+            when(service.execute("ベンチプレス"))
+                    .thenReturn(
+                            List.of(
+                                    new TrainingRecord(
+                                            new Part("胸", "ベンチプレス", "140.0", "10"),
+                                            "2024-04-01"
+                                    ),
+                                    new TrainingRecord(
+                                            new Part("胸", "ベンチプレス", "150.0", "10"),
+                                            "2024-04-09"
+                                    )
+                            )
+                    );
 
-        // execute & assert
-        given()
-                .when()
-                .get("/api/ベンチプレス")
-                .then()
-                .statusCode(200)
-                .assertThat()
-                .body("trainingRecords.size()", is(2))
-                .body("trainingRecords[0].trainingName", is("ベンチプレス"))
-                .body("trainingRecords[0].weight", is("140.0"))
-                .body("trainingRecords[0].rep", is("10"))
-                .body("trainingRecords[1].trainingName", is("ベンチプレス"))
-                .body("trainingRecords[1].weight", is("150.0"))
-                .body("trainingRecords[1].rep", is("10"));
+            // execute & assert
+            given()
+                    .when()
+                    .get("/api/ベンチプレス")
+                    .then()
+                    .statusCode(200)
+                    .assertThat()
+                    .body("trainingRecords.size()", is(2))
+                    .body("trainingRecords[0].trainingName", is("ベンチプレス"))
+                    .body("trainingRecords[0].weight", is("140.0"))
+                    .body("trainingRecords[0].rep", is("10"))
+                    .body("trainingRecords[1].trainingName", is("ベンチプレス"))
+                    .body("trainingRecords[1].weight", is("150.0"))
+                    .body("trainingRecords[1].rep", is("10"));
+        }
+    }
+
+    @Nested
+    class トレーニング記録登録 {
+        @Test
+        void _1件登録() {
+            //setup
+            when(service.execute(List.of(new TrainingRecord(
+                    new Part("胸", "ベンチプレス", "120.0", "7"), "2024-04-03"
+            )))).thenReturn(1);
+
+            given().when().post().body();
+        }
     }
 }
