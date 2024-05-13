@@ -6,7 +6,7 @@ public record TrainingRecord(
         Part part,
         String createDate
 ) {
-    public TrainingRecordEntity toModel() {
+    public TrainingRecordEntity toEntity() {
         return new TrainingRecordEntity(
                 part.partName(), part.trainingName(), part().weight(), part().rep(), createDate
         );

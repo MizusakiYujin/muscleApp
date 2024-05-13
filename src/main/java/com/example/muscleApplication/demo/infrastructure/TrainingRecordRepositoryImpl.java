@@ -28,7 +28,7 @@ public class TrainingRecordRepositoryImpl implements TrainingRecordRepository {
     public Integer insertTrainingRecordList(List<TrainingRecord> trainingRecordList) {
         return trainingRecordList
                 .stream()
-                .map(TrainingRecord::toModel)
+                .map(TrainingRecord::toEntity)
                 .map(trainingRecordMapper::insertTrainingRecord)
                 .reduce(0, Integer::sum);
     }
