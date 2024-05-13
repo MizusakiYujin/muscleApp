@@ -16,5 +16,5 @@ public interface TrainingRecordMapper {
 
 
     @Insert("INSERT INTO training_recode (part_name, training_name, weight, rep, create_date) VALUES (#{partName}, #{trainingName}, #{weight}, #{rep}, #{createDate})")
-    int insertTrainingRecordBulk(TrainingRecordEntity trainingRecord);
+    int insertTrainingRecord(TrainingRecordEntity trainingRecord);
 }
