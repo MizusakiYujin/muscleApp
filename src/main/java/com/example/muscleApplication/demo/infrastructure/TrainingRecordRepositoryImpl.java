@@ -32,6 +32,4 @@ public class TrainingRecordRepositoryImpl implements TrainingRecordRepository {
                 .map(trainingRecordMapper::insertTrainingRecord)
                 .reduce(0, Integer::sum);
     }
-
-
 }
