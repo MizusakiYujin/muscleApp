@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.example.muscleApplication.demo.domain.TrainingRecord;
 import com.example.muscleApplication.demo.domain.Part;
-import com.example.muscleApplication.demo.infrastructure.mapper.TrainingRecordMapper;
+import com.example.muscleApplication.demo.infrastructure.mapper.MybatisAnnotationTrainingRecordMapper;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -19,7 +19,7 @@ class TrainingRecordRepositoryImplTest {
     TrainingRecordRepositoryImpl sut;
 
     @Mock
-    TrainingRecordMapper mapper;
+    MybatisAnnotationTrainingRecordMapper mapper;
 
     @BeforeEach
     void setUp() {
@@ -34,8 +34,8 @@ class TrainingRecordRepositoryImplTest {
             when(mapper.findByTrainingName("ベンチプレス"))
                     .thenReturn(
                             List.of(
-                                    new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "10", "2024-04-01"),
-                                    new TrainingRecordEntity("胸", "ベンチプレス", "150.0", "10", "2024-04-09")
+                                    new TREntity("胸", "ベンチプレス", "140.0", "10", "2024-04-01"),
+                                    new TREntity("胸", "ベンチプレス", "150.0", "10", "2024-04-09")
                             )
                     );
             // execute

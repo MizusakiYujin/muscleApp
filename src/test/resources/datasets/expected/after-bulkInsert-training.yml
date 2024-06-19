@@ -1,0 +1,25 @@
+training_recode:
+  - id: 1
+    part_name: "胸"
+    training_name: "ベンチプレス"
+    weight: "140.0"
+    rep: "10"
+    create_date: "2024-05-01"
+  - id: 2
+    part_name: "腕"
+    training_name: "スカルクラッシャー"
+    weight: "40.0"
+    rep: "8"
+    create_date: "2024-05-01"
+  - id: 3
+    part_name: "胸"
+    training_name: "ベンチプレス"
+    weight: "140.0"
+    rep: "8"
+    create_date: "2024-04-01"
+  - id: 4
+    part_name: "胸"
+    training_name: "ディップス"
+    weight: "40.0"
+    rep: "5"
+    create_date: "2024-04-01"

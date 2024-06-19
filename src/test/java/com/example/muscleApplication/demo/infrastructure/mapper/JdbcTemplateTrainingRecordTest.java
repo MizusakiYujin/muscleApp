@@ -14,14 +14,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.DriverManager;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @DBUnit
 @DBRider
-class TrainingRecordMapperTest {
+class JdbcTemplateTrainingRecordTest {
     private static final String DB_URL = "jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false";
     private static final String DB_USER = "user";
     private static final String DB_PASSWORD = "password";
@@ -30,7 +31,7 @@ class TrainingRecordMapperTest {
             DB_URL, DB_USER, DB_PASSWORD);
 
     @Autowired
-    private TrainingRecordMapper sut;
+    private JdbcTemplateTrainingRecord sut;
 
     @BeforeAll
     static void setUp() {
@@ -90,5 +91,19 @@ class TrainingRecordMapperTest {
 
     }
 
+    @Test
+    @DataSet("datasets/setup/before-insert-training.yml")
+    @ExpectedDataSet("datasets/expected/after-bulkInsert-training.yml")
+    void トレーニング記録2件登録() {
+        // execute
+        List<TrainingRecordEntity> trainingRecordList =
+                List.of(
+                        new TrainingRecordEntity("胸", "ベンチプレス", "140.0", "8", "2024-04-01"),
+                        new TrainingRecordEntity("胸", "ディップス", "40.0", "5", "2024-04-01")
+                );
+        int actual = sut.bulkInsertTrainingRecordList(trainingRecordList);
+        // assert
+        assertThat(actual).isEqualTo(2);
+    }
 
 }

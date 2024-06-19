@@ -1,4 +1,5 @@
 mybatis:
+  mapper-locations: classpath*:com/example/muscleApplication/demo/infrastructure/mapper/MybatisAnnotationTrainingRecordMapper.xml
   configuration:
     map-underscore-to-camel-case: true
 
